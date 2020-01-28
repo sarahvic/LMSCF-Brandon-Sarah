@@ -39,7 +39,7 @@ var temp = Math.floor(Math.random()*31)-5;
 
 function tempGod() {
 if(temp <= 10) {
-	msg = "The weather is cold! " + temp + " degrees<br>	<img src='https://cdn.pixabay.com/photo/2014/11/02/09/15/despair-513529__340.jpg' id='sad'>";
+	msg = "The weather is cold! " + temp + " degrees<br><img src='https://cdn.pixabay.com/photo/2014/11/02/09/15/despair-513529__340.jpg' id='sad'>";
 } else {
 	msg = "The weather is moderate! " + temp + " degrees<br><img src='https://cdn.pixabay.com/photo/2015/01/07/15/51/woman-591576__340.jpg' id='happy'>";
 }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Worlds Greatest Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<div id="spielfeld1">
+		<h1 id="p1">Player 1</h1>
+		<h2>Letzter Wurf:</h2>
+		<p></p>
+		<h2>Summe der Wuerfe</h2>
+		<p></p>
+		</div>
+
+	<div id="spielfeld2">
+		<h1 id="p2">Player 2</h1>
+		<h2>Letzter Wurf:</h2>
+		<p></p>
+		<h2>Summe der Wuerfe</h2>
+		<p></p>
+	</div>
+
+	<div id="interface">
+		<h1>Player 1s turn!</h1>		
+		<button onclick="play()">PLAY!</button>
+
+
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		
+		var player1 = prompt ("Player 1: Enter your name")
+		var player2 = prompt ("Player 2: Enter your name")
+
+		document.getElementById("p1").innerHTML = player1
+		document.getElementById("p2").innerHTML = player2
+
+		var numberOfDice = 2;
+		var playCounter = 1;
+		var maxPoints = 50;
+
+		var player1Throw = 0;
+		var player1Total = 0;
+
+		var player2Throw = 0;
+		var player2Total = 0;
+		document.getElementsByTagName("h1")[2].innerHTML
+						= player1;
+		function play() {
+
+			var thisThrow = 0;	
+			for (var i = 1; i <= numberOfDice;  i++) {
+				thisThrow = thisThrow + Math.floor(Math.random() *6)+1;
+				
+			};				
+
+			console.log(thisThrow);
+			
+			if (playCounter % 2 != 0) {
+				// player 1s turn
+				player1Throw = thisThrow;
+				player1Total = player1Total + thisThrow;
+				document.getElementsByTagName("p")[0].innerHTML = thisThrow;
+				document.getElementsByTagName("p")[1].innerHTML = player1Total;
+
+				if (player1Total > maxPoints) {
+					alert(player1+" wins!")
+				}
+
+				
+
+			} else {
+				// player 2s turn
+				player2Throw = thisThrow;
+				player2Total = player2Total + thisThrow;
+				document.getElementsByTagName("p")[2].innerHTML = thisThrow;
+				document.getElementsByTagName("p")[3].innerHTML = player2Total;
+				if (player1Total > maxPoints) {
+					alert(player2 + " wins")
+			}
+		}
+
+
+			playCounter ++;
+
+			if(playCounter % 2 != 0) {
+				document.getElementsByTagName("h1")[2].innerHTML
+						= player1;
+			} else { 
+				document.getElementsByTagName("h1")[2].innerHTML
+						=player2;
+			}
+
+		}
+
+
+
+
+	</script>
+</body>
+</html>
