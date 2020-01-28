@@ -28,3 +28,28 @@ function sum(arr){
 	
 }
 sum([76,85,23,93,23]);
+
+document.write("<br><hr><br>");
+
+
+	// exercise 2
+
+	function fizzbuzz(){
+
+		for (var i = 0; i < 100; i++){
+			if(i % 3 == 0 && i % 5 == 0){
+				document.write("<font color='blue'>Fizzbuzz</font><br>")
+			} else if (i % 3 == 0){
+				document.write("<font color='red'>Fizz</font><br>")
+			} else if (i % 5 == 0){
+				document.write("<font color='green'>Buzz</font><br>")
+			} else {
+				document.write(i+'<br>');
+			}
+
+		}
+
+	}
+
+
+	fizzbuzz();
